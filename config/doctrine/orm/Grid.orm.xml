@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                                      https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Ctb2Md\Entity\Grid"
+            table="grid"
+            repository-class="Ctb2Md\Repository\GridRepository">
+
+        <id name="nodeId" type="integer" column="node_id">
+            <generator strategy="NONE"/>
+        </id>
+
+        <field name="offset" type="integer" column="offset"/>
+        <field name="justification" type="string" column="justification"/>
+        <field name="txt" type="string" column="txt"/>
+        <field name="colMin" type="integer" column="col_min"/>
+        <field name="colMax" type="integer" column="col_max"/>
+
+        <many-to-one field="node" target-entity="Ctb2Md\Entity\Node">
+            <join-column name="node_id" referenced-column-name="node_id" nullable="false"/>
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

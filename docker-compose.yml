@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  cherrytree2md:
+    build: .
+    volumes:
+      - ./input:/input:ro     # Mount input directory (read-only)
+      - ./output:/output      # Mount output directory
+    command: convert /input/file.ctb /output
+
+  # Alternative service for interactive use
+  cherrytree2md-dev:
+    build: .
+    volumes:
+      - .:/app
+      - ./input:/input:ro
+      - ./output:/output
+    working_dir: /app
+    entrypoint: /bin/sh

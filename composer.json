@@ -1,0 +1,11 @@
+{
+  "require": {
+    "php": ">=8.4",
+    "symfony/console": "^v7.3.3",
+    "doctrine/orm": "^3.5.2",
+    "doctrine/dbal": "^4.3.2",
+    "symfony/cache": "^7.3",
+    "league/html-to-markdown": "*"
+  },
+  "autoload": { "psr-4": { "Ctb2Md\\": "src/" } }
+}

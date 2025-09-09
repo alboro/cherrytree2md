@@ -1,0 +1,7 @@
+/vendor*
+/.idea*
+/logs/*
+/*.ctb
+/output/*
+!output/.gitkeep
+.DS_Store
